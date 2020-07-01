@@ -65,7 +65,7 @@ public final class ComparisonController {
         		}
         //Jamie Richardson changes end
 
-        final Comparison comparison = this.covid19ApiService.getComparison(countries, compareBy);
+        final Comparison comparison = this.covid19ApiService.getComparison($countries, compareBy);
         return new ResponseEntity<>(comparison, HttpStatus.OK);
     }
 }

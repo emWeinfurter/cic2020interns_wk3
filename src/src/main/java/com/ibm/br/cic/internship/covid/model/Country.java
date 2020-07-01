@@ -7,7 +7,7 @@ import lombok.Data;
 /**
  * @author JamieRichardson
  */
-public @Data class Country {
+public @Data class Country{
 
 	//Elise Weinfurter changes begin
 	//changed country and countryCode to public
@@ -47,7 +47,7 @@ public @Data class Country {
 
     @JsonProperty("TotalConfirmed")
     @SerializedName("TotalConfirmed")
-    private int totalConfirmed;
+    public int totalConfirmed;
 
     @JsonProperty("NewDeaths")
     @SerializedName("NewDeaths")
@@ -55,7 +55,7 @@ public @Data class Country {
 
     @JsonProperty("TotalDeaths")
     @SerializedName("TotalDeaths")
-    private int totalDeaths;
+    public int totalDeaths;
 
     @JsonProperty("NewRecovered")
     @SerializedName("NewRecovered")
@@ -63,9 +63,33 @@ public @Data class Country {
 
     @JsonProperty("TotalRecovered")
     @SerializedName("TotalRecovered")
-    private int totalRecovered;
+    public int totalRecovered;
 
-    @JsonProperty("Date")
+    public int getTotalConfirmed() {
+		return totalConfirmed;
+	}
+
+	public void setTotalConfirmed(int totalConfirmed) {
+		this.totalConfirmed = totalConfirmed;
+	}
+
+	public int getTotalDeaths() {
+		return totalDeaths;
+	}
+
+	public void setTotalDeaths(int totalDeaths) {
+		this.totalDeaths = totalDeaths;
+	}
+
+	public int getTotalRecovered() {
+		return totalRecovered;
+	}
+
+	public void setTotalRecovered(int totalRecovered) {
+		this.totalRecovered = totalRecovered;
+	}
+
+	@JsonProperty("Date")
     @SerializedName("Date")
     private String date;
 }
