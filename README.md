@@ -14,7 +14,7 @@ You are a recently hired full stack developer given the task of completing an AP
 ### Developer's Notes
 > "Hey, I pretty much finished everything except the comparison API. Pretty easy and I already created the payload. You just need to implement the **getComparison** method in **Covid19ApiServiceImpl** to return a the list of countries sorted by the CompareBy enum."
 
-> "Oh yeah, I left my Postman collection for you to use."
+> "Oh yeah, I left my Postman collection for you to use and we tried using Lombox so they may be a bug or two."
 
 > "Good luck! J!"
 
