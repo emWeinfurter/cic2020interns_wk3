@@ -15,6 +15,8 @@ import io.swagger.annotations.ApiOperation;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -52,14 +54,16 @@ public final class ComparisonController {
         CompareBy compareBy = CompareBy.valueOf(payload.compareBy);
         Summary summary = this.covid19ApiService.getSummary();
         //Elise Weinfurter end of changes
-
-        Optional<Country> $countries = summary.getCountries().stream().
-                filter(country -> payload.countryCodes.contains(country.getCountryCode()))
-                .findAny();
-
-        if (!$countries.isPresent()) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
+        
+        //Jamie Richardson changes
+        //replaced 'Optional List<Country>'
+        List<Country> $countries = summary.countries.stream().
+        		filter(country -> payload.countryCodes.contains(country.countryCode))
+        		.collect(Collectors.toList());
+        		if ($countries.isEmpty()) {
+        		    return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        		}
+        //Jamie Richardson changes end
 
         final Comparison comparison = this.covid19ApiService.getComparison(countries, compareBy);
         return new ResponseEntity<>(comparison, HttpStatus.OK);

@@ -8,9 +8,24 @@ import lombok.Data;
  * @author JamieRichardson
  */
 public @Data class Comparison {
+	//Elise Weinfurter changes
+	//Comparison class constructor
+	//added getters and setters for "Countries"
+	public Comparison(List<Country> countries) {
+        this.countries = countries;
+    }
 
     @JsonProperty("Countries")
     private List<Country> countries;
 
-    private CompareBy compareBy;
+    public List<Country> getCountries() {
+		return countries;
+	}
+
+	public void setCountries(List<Country> countries) {
+		this.countries = countries;
+	}
+	//Elise Weinfurter changes end
+
+	private CompareBy compareBy;
 }

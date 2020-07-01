@@ -9,6 +9,7 @@ import com.ibm.br.cic.internship.covid.model.Country;
 import com.ibm.br.cic.internship.covid.model.Global;
 import com.ibm.br.cic.internship.covid.model.Summary;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -43,6 +44,8 @@ public class Covid19ApiServiceImpl implements Covid19ApiService {
     @Override
     public Comparison getComparison(List<Country> countries, CompareBy compareBy) {
         //Your work goes here
-        throw new UnsupportedOperationException("Not supported yet.");
+        
+    	return new Comparison(countries);	//supoosed to return unsorted list of countries
+        //throw new UnsupportedOperationException("Not supported yet.");
     }
 }
