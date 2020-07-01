@@ -46,9 +46,12 @@ public final class ComparisonController {
     @PostMapping(path = "/comparison", consumes = "application/json", produces = "application/json")
     public ResponseEntity<?> getComparison(@RequestBody ComparisonPayload payload) {
 
-        final List<Country> countries = new ArrayList<>();
-        final CompareBy compareBy = CompareBy.valueOf(payload.compareBy);
-        final Summary summary = this.covid19ApiService.getSummary();
+    	//Elise Weinfurter changes begin here
+    	//removed 'final' from List<Country>, CompareBy, and Summary
+        List<Country> countries = new ArrayList<>();
+        CompareBy compareBy = CompareBy.valueOf(payload.compareBy);
+        Summary summary = this.covid19ApiService.getSummary();
+        //Elise Weinfurter end of changes
 
         Optional<Country> $countries = summary.getCountries().stream().
                 filter(country -> payload.countryCodes.contains(country.getCountryCode()))

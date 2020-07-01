@@ -9,15 +9,35 @@ import lombok.Data;
  */
 public @Data class Country {
 
+	//Elise Weinfurter changes begin
+	//changed country and countryCode to public
+	//added getters and setters
     @JsonProperty("Country")
     @SerializedName("Country")
-    private String country;
+    public String country;
 
     @JsonProperty("CountryCode")
     @SerializedName("CountryCode")
-    private String countryCode;
+    public String countryCode;
 
-    @JsonProperty("Slug")
+    public String getCountry() {
+		return country;
+	}
+
+	public void setCountry(String country) {
+		this.country = country;
+	}
+
+	public String getCountryCode() {
+		return countryCode;
+	}
+
+	public void setCountryCode(String countryCode) {
+		this.countryCode = countryCode;
+	}
+	//Elise Weinfurter changes end
+
+	@JsonProperty("Slug")
     @SerializedName("Slug")
     private String slug;
 
