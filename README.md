@@ -3,7 +3,7 @@
 https://api.covid19api.com/
 
 ## Scenario
-You are a recently hired full stack developer giving the task of completing an API development user story started by a former colleague. You must complete the requirements of the user story and test to ensure all new and existing funtionality of the API.
+You are a recently hired full stack developer given the task of completing an API development user story started by a former colleague. You must complete the requirements of the user story and test to ensure all new and existing funtionality of the API.
 
 ## User Story 
  > As a React Native COVID-19 mobile developer, I want to use an API that I can receive a list of countries where I have provided the countries and whether they are compared by "Total Confirmed", "Total Deaths", or "Total Recovered" so that I can display the list in the mobile application.
