@@ -45,28 +45,18 @@ public class Covid19ApiServiceImpl implements Covid19ApiService {
     @Override
     public Comparison getComparison(List<Country> countries, CompareBy compareBy) {
         //Your work goes here 
-    	if (compareBy == CompareBy.TotalConfirmed) {
-    		Collections.sort(countries, new Comparator<Country>() {
-        		@Override
-        		public int compare(Country a, Country b) {
-        			return b.getTotalConfirmed()-a.getTotalConfirmed();
-        		}
-        	});
-    	} else if (compareBy == CompareBy.TotalDeaths) {
-    		Collections.sort(countries, new Comparator<Country>() {
-        		@Override
-        		public int compare(Country a, Country b) {
-        			return b.getTotalDeaths()-a.getTotalDeaths();
-        		}
-        	});
-    	} else if (compareBy == CompareBy.TotalRecovered) {
-    		Collections.sort(countries, new Comparator<Country>() {
-        		@Override
-        		public int compare(Country a, Country b) {
-        			return b.getTotalRecovered()-a.getTotalRecovered();
-        		}
-        	});
-    	} else throw new UnsupportedOperationException("Not supported yet.");
+    	Collections.sort(countries, new Comparator<Country>() {
+    		@Override
+    		public int compare(Country a, Country b) {
+    			if (compareBy == CompareBy.TotalConfirmed)
+    				return b.getTotalConfirmed()-a.getTotalConfirmed();
+    			else if (compareBy == CompareBy.TotalDeaths)
+    				return b.getTotalDeaths()-a.getTotalDeaths();
+    			else if (compareBy == CompareBy.TotalRecovered)
+    				return b.getTotalRecovered()-a.getTotalRecovered();
+    			else return 0;
+    		}
+    	});
       
     	return new Comparison(countries);
     }

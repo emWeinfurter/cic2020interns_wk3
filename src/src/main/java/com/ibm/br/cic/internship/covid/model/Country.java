@@ -12,6 +12,7 @@ public @Data class Country{
 	//Elise Weinfurter changes begin
 	//changed country and countryCode to public
 	//added getters and setters
+	//added getters and setters for the totalRecovered, totalDeaths, & totalConfirmed
     @JsonProperty("Country")
     @SerializedName("Country")
     public String country;
@@ -35,7 +36,6 @@ public @Data class Country{
 	public void setCountryCode(String countryCode) {
 		this.countryCode = countryCode;
 	}
-	//Elise Weinfurter changes end
 
 	@JsonProperty("Slug")
     @SerializedName("Slug")
@@ -48,6 +48,14 @@ public @Data class Country{
     @JsonProperty("TotalConfirmed")
     @SerializedName("TotalConfirmed")
     public int totalConfirmed;
+    
+    public int getTotalConfirmed() {
+		return totalConfirmed;
+	}
+
+	public void setTotalConfirmed(int totalConfirmed) {
+		this.totalConfirmed = totalConfirmed;
+	}
 
     @JsonProperty("NewDeaths")
     @SerializedName("NewDeaths")
@@ -56,6 +64,14 @@ public @Data class Country{
     @JsonProperty("TotalDeaths")
     @SerializedName("TotalDeaths")
     public int totalDeaths;
+    
+    public int getTotalDeaths() {
+		return totalDeaths;
+	}
+
+	public void setTotalDeaths(int totalDeaths) {
+		this.totalDeaths = totalDeaths;
+	}
 
     @JsonProperty("NewRecovered")
     @SerializedName("NewRecovered")
@@ -65,22 +81,6 @@ public @Data class Country{
     @SerializedName("TotalRecovered")
     public int totalRecovered;
 
-    public int getTotalConfirmed() {
-		return totalConfirmed;
-	}
-
-	public void setTotalConfirmed(int totalConfirmed) {
-		this.totalConfirmed = totalConfirmed;
-	}
-
-	public int getTotalDeaths() {
-		return totalDeaths;
-	}
-
-	public void setTotalDeaths(int totalDeaths) {
-		this.totalDeaths = totalDeaths;
-	}
-
 	public int getTotalRecovered() {
 		return totalRecovered;
 	}
@@ -88,6 +88,7 @@ public @Data class Country{
 	public void setTotalRecovered(int totalRecovered) {
 		this.totalRecovered = totalRecovered;
 	}
+	//Elise Weinfurter changes end
 
 	@JsonProperty("Date")
     @SerializedName("Date")
