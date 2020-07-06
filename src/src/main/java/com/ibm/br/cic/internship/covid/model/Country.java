@@ -47,7 +47,7 @@ public @Data class Country{
 
     @JsonProperty("TotalConfirmed")
     @SerializedName("TotalConfirmed")
-    public int totalConfirmed;
+    private int totalConfirmed;
     
     public int getTotalConfirmed() {
 		return totalConfirmed;
@@ -63,7 +63,7 @@ public @Data class Country{
 
     @JsonProperty("TotalDeaths")
     @SerializedName("TotalDeaths")
-    public int totalDeaths;
+    private int totalDeaths;
     
     public int getTotalDeaths() {
 		return totalDeaths;
@@ -79,7 +79,7 @@ public @Data class Country{
 
     @JsonProperty("TotalRecovered")
     @SerializedName("TotalRecovered")
-    public int totalRecovered;
+    private int totalRecovered;
 
 	public int getTotalRecovered() {
 		return totalRecovered;

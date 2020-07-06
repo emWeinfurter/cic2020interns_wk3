@@ -44,7 +44,7 @@ public class Covid19ApiServiceImpl implements Covid19ApiService {
 
     @Override
     public Comparison getComparison(List<Country> countries, CompareBy compareBy) {
-        //Your work goes here 
+        //Elise Weinfurter changes 
     	Collections.sort(countries, new Comparator<Country>() {
     		@Override
     		public int compare(Country a, Country b) {
@@ -59,5 +59,6 @@ public class Covid19ApiServiceImpl implements Covid19ApiService {
     	});
       
     	return new Comparison(countries);
+    	//End Elise Weinfurter changes
     }
 }
